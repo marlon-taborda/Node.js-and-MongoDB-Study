@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <h2>Read</h2>
+    <ul>
+      <% for(let i=0; i < result.length; i++) { %>
+        <li>
+          <%= result[i].name %>
+        </li>
+      <% } %>
+    </ul>
+    <h2>Create</h2>
+    <form action="save" method="POST">
+      <p>
+        <label>Name:</label>
+        <input type="text" name="name" />
+      </p>
+      <p>
+        <label>Age:</label>
+        <input type="text" name="age" />
+      </p>
+      <p>
+        <input type="submit" name="Save" />
+      </p>
+    </form>
+    <h2>Delete</h2>
+    <form action="delete" method="POST">
+      <p>
+        <label>Id:</label>
+        <input type="text" name="id" />
+      </p>
+      <p>
+        <input type="submit" name="Delete" />
+      </p>
+    </form>
+    <h2>Update</h2>
+    <form action="edit" method="POST">
+      <p>
+        <label>Id:</label>
+        <input type="text" name="id" />
+      </p>
+      <p>
+        <label>Name:</label>
+        <input type="text" name="name" />
+      </p>
+      <p>
+        <input type="submit" name="Update" />
+      </p>
+    </form>
+  </body>
+</html>
